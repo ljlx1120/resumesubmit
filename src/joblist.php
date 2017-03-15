@@ -63,7 +63,8 @@
     }
 
     static function delete(){
-      $_SESSION['jobs'] = array();
+      session_destroy();
     }
+
   }
 ?>

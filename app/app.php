@@ -20,7 +20,12 @@
     $app->post("/function", function() use ($app) {
       $newjob = new Job($_POST['firstName'], $_POST['lastName'], $_POST['jobTitle'], $_POST['year'], $_POST['company']);
       $newjob->save();
-      return $app['twig']->render('job.html.twig',array("jobs"=>$newjob::getAll()));
+      return $app['twig']->render('job.html.twig',array("jobs"=>$_SESSION['jobs']));
+    });
+
+    $app->post("/refresh", function() use ($app) {
+      Job::delete();
+      return $app['twig']->render('job.html.twig');
     });
 
     return $app;
