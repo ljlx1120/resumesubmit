@@ -40,11 +40,11 @@
         <div class="col-md-6">
           {% if jobs is not empty %}
           {% for job in jobs %}
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+            <li>First Name: {{ job.getFirstName }}</li>
+            <li>Last Name: {{ job.getLastName }}</li>
+            <li>Title: {{ job.getJobTitle }}</li>
+            <li>Year: {{ job.getYear }}</li>
+            <li>Company: {{ job.getCompany }}</li>
           {% endfor %}
           {% endif %}
         </div>
